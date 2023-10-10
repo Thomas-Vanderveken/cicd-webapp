@@ -40,7 +40,6 @@
         - name: Build and push Docker image
           uses: docker/build-push-action@v2
           with:
-            context: .
             file: ./dockerfile
-            push: true
+            push: True
             tags: crazyrhino/webapp:latest
