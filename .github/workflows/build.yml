@@ -5,7 +5,7 @@
       branches:
         - main
   jobs:
-    login-to-docker:
+    login-to-docker-hub:
       runs-on: ubuntu-latest
       steps:
         - name: Log in to Docker Hub
@@ -33,10 +33,14 @@
         - name: "Run linting"
           run: yarn lint
 
-        - name: Build Docker image
+    build-and-push:
+      runs-on: ubuntu-latest
+      needs: login-to-docker-hub
+      steps:
+        - name: Build and push Docker image
           uses: docker/build-push-action@v2
           with:
             context: .
             file: ./Dockerfile
             push: true
-            tags: crazorhino/webapp:latest
+            tags: your-docker-hub-username/webapp:latest
