@@ -38,7 +38,7 @@
       needs: login-to-docker-hub
       steps:
         - name: Build and push Docker image
-          uses: docker/build-push-action@v2
+          uses: docker/build-push-action@v4
           with:
             file: ./dockerfile
             push: True
