@@ -44,3 +44,4 @@
             file: ./dockerfile
             push: true
             tags: crazyrhino/webapp:latest
+            
