@@ -12,5 +12,12 @@ services:
     image: mongo:latest
     volumes:
       - mongo-vol:/data/db
+  test:
+    image: crazyrhino/webapp-test
+    depends_on:
+      - database
+    command: ["yarn", "test", "test.spec.js"]
+    environment:
+      MONGO_URL: mongodb://database:27017/webapp
 volumes:
   mongo-vol:

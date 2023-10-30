@@ -34,4 +34,13 @@
             push: true
             file: ./dockerfile
             tags: crazyrhino/webapp:latest
+        
+        - name: Run unit tests
+          run: docker-compose up -d
+
+        - name: Run unit tests
+          run: docker compose run tests
+
+        - name: Docker Compose down
+          run: docker-compose down
   
