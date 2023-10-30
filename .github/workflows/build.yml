@@ -36,7 +36,7 @@
             file: ./dockerfile
             tags: crazyrhino/webapp:latest
         
-        - name: Run unit tests
+        - name: Run Compose up
           run: docker-compose up -d
 
         - name: Run unit tests
