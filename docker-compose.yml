@@ -18,6 +18,6 @@ services:
       - webapp
     command: ["yarn", "test", "test.spec.js"]
     environment:
-      - API_URL: http://webapp:3000
+      - API_URL: "http://webapp:3000"
 volumes:
   mongo-vol:
