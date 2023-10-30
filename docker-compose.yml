@@ -15,9 +15,9 @@ services:
   tests:
     image: crazyrhino/webapp-test
     depends_on:
-      - database
+      - webapp
     command: ["yarn", "test", "test.spec.js"]
     environment:
-      MONGO_URL: mongodb://database:27017/webapp
+      - API_URL: http://webapp:3000
 volumes:
   mongo-vol:
