@@ -1,7 +1,7 @@
 services:
   webapp:
     build: .
-    image: crazyrhino/webapp
+    image: crazyrhino/webapp:latest
     ports:
       - "3000:3000"
     depends_on:
@@ -15,7 +15,7 @@ services:
     volumes:
       - mongo-vol:/data/db
   tests:
-    image: crazyrhino/webapp-test
+    image: crazyrhino/webapp-test:latest
     depends_on:
       - webapp
     command: ["yarn", "test", "test.spec.js"]
