@@ -12,7 +12,7 @@ services:
     image: mongo:latest
     volumes:
       - mongo-vol:/data/db
-  test:
+  tests:
     image: crazyrhino/webapp-test
     depends_on:
       - database
