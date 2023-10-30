@@ -9,7 +9,9 @@ services:
     environment:
       MONGO_URL: mongodb://database:27017/webapp
   database:
-    image: mongo:latest
+    image: mongo:4.4.6
+    ports:
+      - "27017:27017"
     volumes:
       - mongo-vol:/data/db
   tests:
