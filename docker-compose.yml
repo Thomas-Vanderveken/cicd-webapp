@@ -8,12 +8,7 @@ services:
       - database
     environment:
       - MONGO_URL=mongodb://database:27017/webapp
-  database:
-    image: mongo:4.4.0
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo-vol:/data/db
+
   tests:
     image: crazyrhino/webapp:latest
     depends_on:
